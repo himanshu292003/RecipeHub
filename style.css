@@ -1,0 +1,545 @@
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes gradientText {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+:root {
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --muted-foreground: #6b7280;
+    --background: #f3f4f6;
+    --card-background: #ffffff;
+    --accent: #10b981;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: #333;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+nav {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    padding: 0; /* Remove vertical padding */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeInDown 0.5s ease-out;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px; /* Set a fixed height */
+    padding: 0 1rem; /* Add horizontal padding */
+}
+nav h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%; /* Full height of navbar */
+}
+
+nav ul li {
+    height: 100%; /* Full height of navbar */
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a {
+    color: var(--primary-foreground);
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    height: 100%; /* Full height of navbar */
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-foreground);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out;
+}
+nav ul li a:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+.hero {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    padding: 4rem 0;
+    text-align: center;
+    margin-top: -33px;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+}
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+main {
+    padding: 2rem 0;
+}
+main h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #3b82f6, #10b981, #3b82f6);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 5s ease infinite;
+}
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+.recipe-card {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.recipe-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.recipe-card-content {
+    padding: 1rem;
+}
+.recipe-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    color: var(--primary);
+}
+.recipe-card p {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    display: flex;
+    align-items: center;
+}
+.recipe-card p svg {
+    margin-right: 0.25rem;
+}
+footer {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    padding: 2rem 0;
+}
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+footer h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+footer ul li {
+    margin-bottom: 0.5rem;
+}
+footer ul li a {
+    color: var(--primary-foreground);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+footer ul li a:hover {
+    opacity: 1;
+}
+.footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    opacity: 0.8;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: var(--card-background);
+    margin: 5% auto;
+    padding: 2rem;
+    border: 1px solid #888;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+.modal h2 {
+    margin-top: 0;
+    color: var(--primary);
+}
+.modal h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+.modal ul, .modal ol {
+    margin-top: 0;
+    padding-left: 1.5rem;
+}
+.modal button {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+.modal button:hover {
+    background-color: #2563eb;
+}
+.instruction-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    background-color: #f3f4f6;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+}
+.instruction-item:hover {
+    background-color: #e5e7eb;
+}
+.instruction-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--primary);
+    border-radius: 0.25rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.instruction-checkbox:checked {
+    background-color: var(--accent);
+    border-color: var(--accent);
+}
+.instruction-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.instruction-text {
+    flex-grow: 1;
+    margin-right: 0.5rem;
+    transition: color 0.3s ease;
+}
+.completed-instruction .instruction-text {
+    text-decoration: line-through;
+    color: var(--muted-foreground);
+}
+#timerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+}
+#timerDisplay {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+#startStopBtn, #resetBtn {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+#startStopBtn {
+    background-color: var(--accent);
+    color: white;
+}
+#resetBtn {
+    background-color: #ef4444;
+    color: white;
+}
+#startStopBtn:hover, #resetBtn:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+@media (max-width: 768px) {
+    footer .container {
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+
+    nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    main h2 {
+        font-size: 2rem;
+    }
+
+    .recipes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-card {
+        max-width: 100%;
+    }
+
+    footer .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 1rem;
+    }
+
+    .modal h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal h3 {
+        font-size: 1.2rem;
+    }
+
+    #timerDisplay {
+        font-size: 1.5rem;
+    }
+
+    #startStopBtn, #resetBtn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+.section {
+    display: none;
+    padding: 2rem 0;
+}
+
+.section.active {
+    display: block;
+}
+
+.about-content, .contact-content {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--muted-foreground);
+    border-radius: 0.25rem;
+}
+
+.contact-form button {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #2563eb;
+}
+        .section {
+    display: none;
+    padding: 2rem 0;
+}
+
+.section.active {
+    display: block;
+}
+
+.about-content, .contact-content {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--muted-foreground);
+    border-radius: 0.25rem;
+}
+
+.contact-form button {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #2563eb;
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Recipe Hub</h1>
+            <ul>
+                <li><a href="#" data-section="home">Home</a></li>
+                <li><a href="#" data-section="recipes">Recipes</a></li>
+                <li><a href="#" data-section="about">About</a></li>
+                <li><a href="#" data-section="contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="section active">
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Recipe Hub</h1>
+                <p>Discover delicious recipes and cook like a pro!</p>
+            </div>
+        </section>
+
+        <main>
+            <div class="container">
+                <h2>Our Recipes</h2>
+                <div class="recipes-grid" id="recipes-grid"></div>
+            </div>
+        </main>
+    </section>
+
+    <section id="recipes" class="section">
+        <main>
+            <div class="container">
+                <h2>Our Recipes</h2>
+                <div class="recipes-grid" id="recipes-grid-alt"></div>
+            </div>
+        </main>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Recipe Hub</h2>
+                <p>Recipe Hub is your go-to source for delicious recipes and cooking inspiration. Our mission is to make cooking enjoyable and accessible for everyone, from beginners to seasoned chefs.</p>
+                <p>Founded in 2024, we've been sharing mouth-watering recipes, cooking tips, and culinary adventures. Our team of passionate food lovers is dedicated to bringing you the best recipes from around the world.</p>
+                <p>Whether you're looking for quick weeknight dinners, impressive dishes for entertaining, or healthy meal options, Recipe Hub has got you covered. Join our community of food enthusiasts and start your culinary journey today!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-content">
+                <h2>Contact Us</h2>
+                <p>Have a question, suggestion, or just want to say hello? We'd love to hear from you!</p>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div>
+                <h3>About Us</h3>
+                <p>Recipe Hub is your go-to source for delicious recipes and cooking inspiration.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#" data-section="home">Home</a></li>
+                    <li><a href="#" data-section="recipes">Recipes</a></li>
+                    <li><a href="#" data-section="about">About</a></li>
+                    <li><a href="#" data-section="contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Connect With Us</h3>
+                <p>Follow us on social media for the latest recipes and cooking tips!</p>
+                <div class="social-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Twitter</a>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Recipe Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div id="recipeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
